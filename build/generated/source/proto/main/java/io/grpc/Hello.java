@@ -1288,8 +1288,12 @@ public final class Hello {
     java.lang.String[] descriptorData = {
       "\n\013hello.proto\")\n\014HelloRequest\022\014\n\004name\030\001 " +
       "\001(\t\022\013\n\003sex\030\002 \001(\t\"\035\n\nHelloReply\022\017\n\007messag" +
-      "e\030\001 \001(\t23\n\007Greeter\022(\n\010SayHello\022\r.HelloRe" +
-      "quest\032\013.HelloReply\"\000B\t\n\007io.grpcb\006proto3"
+      "e\030\001 \001(\t2\274\001\n\007Greeter\022(\n\010SayHello\022\r.HelloR" +
+      "equest\032\013.HelloReply\"\000\022+\n\tSayHello2\022\r.Hel" +
+      "loRequest\032\013.HelloReply\"\000(\001\022+\n\tSayHello3\022" +
+      "\r.HelloRequest\032\013.HelloReply\"\0000\001\022-\n\tSayHe" +
+      "llo4\022\r.HelloRequest\032\013.HelloReply\"\000(\0010\001B\t" +
+      "\n\007io.grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

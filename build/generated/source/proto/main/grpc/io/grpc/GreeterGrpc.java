@@ -46,6 +46,99 @@ public final class GreeterGrpc {
     return getSayHelloMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<io.grpc.Hello.HelloRequest,
+      io.grpc.Hello.HelloReply> getSayHello2Method;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SayHello2",
+      requestType = io.grpc.Hello.HelloRequest.class,
+      responseType = io.grpc.Hello.HelloReply.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<io.grpc.Hello.HelloRequest,
+      io.grpc.Hello.HelloReply> getSayHello2Method() {
+    io.grpc.MethodDescriptor<io.grpc.Hello.HelloRequest, io.grpc.Hello.HelloReply> getSayHello2Method;
+    if ((getSayHello2Method = GreeterGrpc.getSayHello2Method) == null) {
+      synchronized (GreeterGrpc.class) {
+        if ((getSayHello2Method = GreeterGrpc.getSayHello2Method) == null) {
+          GreeterGrpc.getSayHello2Method = getSayHello2Method =
+              io.grpc.MethodDescriptor.<io.grpc.Hello.HelloRequest, io.grpc.Hello.HelloReply>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SayHello2"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.Hello.HelloRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.Hello.HelloReply.getDefaultInstance()))
+              .setSchemaDescriptor(new GreeterMethodDescriptorSupplier("SayHello2"))
+              .build();
+        }
+      }
+    }
+    return getSayHello2Method;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<io.grpc.Hello.HelloRequest,
+      io.grpc.Hello.HelloReply> getSayHello3Method;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SayHello3",
+      requestType = io.grpc.Hello.HelloRequest.class,
+      responseType = io.grpc.Hello.HelloReply.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<io.grpc.Hello.HelloRequest,
+      io.grpc.Hello.HelloReply> getSayHello3Method() {
+    io.grpc.MethodDescriptor<io.grpc.Hello.HelloRequest, io.grpc.Hello.HelloReply> getSayHello3Method;
+    if ((getSayHello3Method = GreeterGrpc.getSayHello3Method) == null) {
+      synchronized (GreeterGrpc.class) {
+        if ((getSayHello3Method = GreeterGrpc.getSayHello3Method) == null) {
+          GreeterGrpc.getSayHello3Method = getSayHello3Method =
+              io.grpc.MethodDescriptor.<io.grpc.Hello.HelloRequest, io.grpc.Hello.HelloReply>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SayHello3"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.Hello.HelloRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.Hello.HelloReply.getDefaultInstance()))
+              .setSchemaDescriptor(new GreeterMethodDescriptorSupplier("SayHello3"))
+              .build();
+        }
+      }
+    }
+    return getSayHello3Method;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<io.grpc.Hello.HelloRequest,
+      io.grpc.Hello.HelloReply> getSayHello4Method;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SayHello4",
+      requestType = io.grpc.Hello.HelloRequest.class,
+      responseType = io.grpc.Hello.HelloReply.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<io.grpc.Hello.HelloRequest,
+      io.grpc.Hello.HelloReply> getSayHello4Method() {
+    io.grpc.MethodDescriptor<io.grpc.Hello.HelloRequest, io.grpc.Hello.HelloReply> getSayHello4Method;
+    if ((getSayHello4Method = GreeterGrpc.getSayHello4Method) == null) {
+      synchronized (GreeterGrpc.class) {
+        if ((getSayHello4Method = GreeterGrpc.getSayHello4Method) == null) {
+          GreeterGrpc.getSayHello4Method = getSayHello4Method =
+              io.grpc.MethodDescriptor.<io.grpc.Hello.HelloRequest, io.grpc.Hello.HelloReply>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SayHello4"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.Hello.HelloRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.Hello.HelloReply.getDefaultInstance()))
+              .setSchemaDescriptor(new GreeterMethodDescriptorSupplier("SayHello4"))
+              .build();
+        }
+      }
+    }
+    return getSayHello4Method;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -100,6 +193,27 @@ public final class GreeterGrpc {
         io.grpc.stub.StreamObserver<io.grpc.Hello.HelloReply> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSayHelloMethod(), responseObserver);
     }
+
+    /**
+     */
+    default io.grpc.stub.StreamObserver<io.grpc.Hello.HelloRequest> sayHello2(
+        io.grpc.stub.StreamObserver<io.grpc.Hello.HelloReply> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getSayHello2Method(), responseObserver);
+    }
+
+    /**
+     */
+    default void sayHello3(io.grpc.Hello.HelloRequest request,
+        io.grpc.stub.StreamObserver<io.grpc.Hello.HelloReply> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSayHello3Method(), responseObserver);
+    }
+
+    /**
+     */
+    default io.grpc.stub.StreamObserver<io.grpc.Hello.HelloRequest> sayHello4(
+        io.grpc.stub.StreamObserver<io.grpc.Hello.HelloReply> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getSayHello4Method(), responseObserver);
+    }
   }
 
   /**
@@ -136,6 +250,30 @@ public final class GreeterGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSayHelloMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<io.grpc.Hello.HelloRequest> sayHello2(
+        io.grpc.stub.StreamObserver<io.grpc.Hello.HelloReply> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
+          getChannel().newCall(getSayHello2Method(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public void sayHello3(io.grpc.Hello.HelloRequest request,
+        io.grpc.stub.StreamObserver<io.grpc.Hello.HelloReply> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getSayHello3Method(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<io.grpc.Hello.HelloRequest> sayHello4(
+        io.grpc.stub.StreamObserver<io.grpc.Hello.HelloReply> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getSayHello4Method(), getCallOptions()), responseObserver);
+    }
   }
 
   /**
@@ -159,6 +297,14 @@ public final class GreeterGrpc {
     public io.grpc.Hello.HelloReply sayHello(io.grpc.Hello.HelloRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSayHelloMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<io.grpc.Hello.HelloReply> sayHello3(
+        io.grpc.Hello.HelloRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getSayHello3Method(), getCallOptions(), request);
     }
   }
 
@@ -188,6 +334,9 @@ public final class GreeterGrpc {
   }
 
   private static final int METHODID_SAY_HELLO = 0;
+  private static final int METHODID_SAY_HELLO3 = 1;
+  private static final int METHODID_SAY_HELLO2 = 2;
+  private static final int METHODID_SAY_HELLO4 = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -210,6 +359,10 @@ public final class GreeterGrpc {
           serviceImpl.sayHello((io.grpc.Hello.HelloRequest) request,
               (io.grpc.stub.StreamObserver<io.grpc.Hello.HelloReply>) responseObserver);
           break;
+        case METHODID_SAY_HELLO3:
+          serviceImpl.sayHello3((io.grpc.Hello.HelloRequest) request,
+              (io.grpc.stub.StreamObserver<io.grpc.Hello.HelloReply>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -220,6 +373,12 @@ public final class GreeterGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_SAY_HELLO2:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.sayHello2(
+              (io.grpc.stub.StreamObserver<io.grpc.Hello.HelloReply>) responseObserver);
+        case METHODID_SAY_HELLO4:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.sayHello4(
+              (io.grpc.stub.StreamObserver<io.grpc.Hello.HelloReply>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -235,6 +394,27 @@ public final class GreeterGrpc {
               io.grpc.Hello.HelloRequest,
               io.grpc.Hello.HelloReply>(
                 service, METHODID_SAY_HELLO)))
+        .addMethod(
+          getSayHello2Method(),
+          io.grpc.stub.ServerCalls.asyncClientStreamingCall(
+            new MethodHandlers<
+              io.grpc.Hello.HelloRequest,
+              io.grpc.Hello.HelloReply>(
+                service, METHODID_SAY_HELLO2)))
+        .addMethod(
+          getSayHello3Method(),
+          io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+            new MethodHandlers<
+              io.grpc.Hello.HelloRequest,
+              io.grpc.Hello.HelloReply>(
+                service, METHODID_SAY_HELLO3)))
+        .addMethod(
+          getSayHello4Method(),
+          io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+            new MethodHandlers<
+              io.grpc.Hello.HelloRequest,
+              io.grpc.Hello.HelloReply>(
+                service, METHODID_SAY_HELLO4)))
         .build();
   }
 
@@ -284,6 +464,9 @@ public final class GreeterGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new GreeterFileDescriptorSupplier())
               .addMethod(getSayHelloMethod())
+              .addMethod(getSayHello2Method())
+              .addMethod(getSayHello3Method())
+              .addMethod(getSayHello4Method())
               .build();
         }
       }
