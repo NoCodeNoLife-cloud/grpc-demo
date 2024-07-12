@@ -3,7 +3,6 @@ package code;
 // Copyright (c) 2024, NoCodeNoLife-cloud. All rights reserved.
 // Author: NoCodeNoLife-cloud
 // stay hungry，stay foolish
-import com.google.common.util.concurrent.ListenableFuture;
 import io.grpc.GreeterGrpc;
 import io.grpc.Hello;
 import io.grpc.ManagedChannel;
@@ -23,7 +22,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 @Getter
-public class GRpcClient {
+public class GRpcClientLauncher {
 	private final ManagedChannel managedChannel;
 	private final String name;
 	private final int port;
@@ -32,11 +31,13 @@ public class GRpcClient {
 
 	/**
 	 * Constructs a new GRpcClient instance with the specified server name and port.
+	 *
 	 * @param name The name of the server to connect to.
 	 * @param port The port number to connect to the server.
+	 *
 	 * @throws InterruptedException If there is an error creating the managed channel.
 	 */
-	public GRpcClient(String name, int port) throws InterruptedException {
+	public GRpcClientLauncher(String name, int port) throws InterruptedException {
 		// Set the server name
 		this.name = name;
 
@@ -56,10 +57,12 @@ public class GRpcClient {
 
 	/**
 	 * Constructs a new GRpcClient instance with the specified port number.
+	 *
 	 * @param port The port number to connect to the server.
+	 *
 	 * @throws IOException If there is an error creating the managed channel.
 	 */
-	public GRpcClient(int port) {
+	public GRpcClientLauncher(int port) {
 		// Set the server name to "127.0.0.1"
 		this.name = "127.0.0.1";
 
@@ -79,8 +82,10 @@ public class GRpcClient {
 
 	/**
 	 * Waits for the channel to terminate within the given time limit.
+	 *
 	 * @param time the time to wait for the channel to terminate
 	 * @param unit the time unit for the time parameter
+	 *
 	 * @throws InterruptedException if the current thread is interrupted while waiting
 	 */
 	public void awaitTermination(int time, TimeUnit unit) throws InterruptedException {
@@ -90,12 +95,13 @@ public class GRpcClient {
 
 	/**
 	 * Entry point of the application.
+	 *
 	 * @param args The command line arguments.
 	 */
 	public static void main(String[] args) throws ExecutionException, InterruptedException {
 		// Simple RPC
 		log.info("Simple RPC");
-		GRpcClient client = new GRpcClient(50051);
+		GRpcClientLauncher client = new GRpcClientLauncher(50051);
 		Hello.HelloRequest request = Hello.HelloRequest.newBuilder().setName("hello").setSex("man").build();
 		Hello.HelloReply reply = client.greeterBlockingStub.sayHello(request);
 		log.info("Greeting: " + reply.getMessage());

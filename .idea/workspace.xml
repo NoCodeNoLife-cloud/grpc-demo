@@ -56,9 +56,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Grpc protobuffer" />
-        <option value="GRpcServer" />
-        <option value="GRpcClient" />
         <option value="Logback Config" />
+        <option value="GRpcServerLauncher" />
       </list>
     </option>
   </component>
@@ -109,9 +108,9 @@
       <recent name="D:\project\grpc-demo\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.GRpcServer">
-    <configuration name="GRpcClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="code.GRpcClient" />
+  <component name="RunManager" selected="应用程序.GRpcServerLauncher">
+    <configuration name="GRpcClientLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="code.GRpcClientLauncher" />
       <module name="grpc-demo.main" />
       <extension name="coverage">
         <pattern>
@@ -123,8 +122,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GRpcServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="code.GRpcServer" />
+    <configuration name="GRpcServerLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="code.GRpcServerLauncher" />
       <module name="grpc-demo.main" />
       <extension name="coverage">
         <pattern>
@@ -206,8 +205,8 @@
       <list>
         <item itemvalue="Gradle.grpc-demo [generateProto]" />
         <item itemvalue="Gradle.grpc-demo [clean]" />
-        <item itemvalue="应用程序.GRpcServer" />
-        <item itemvalue="应用程序.GRpcClient" />
+        <item itemvalue="应用程序.GRpcServerLauncher" />
+        <item itemvalue="应用程序.GRpcClientLauncher" />
         <item itemvalue="Gradle.grpc-demo [processResources]" />
       </list>
     </recent_temporary>
@@ -244,6 +243,9 @@
       <workItem from="1719921635507" duration="7122000" />
       <workItem from="1719931503234" duration="179000" />
       <workItem from="1719983162946" duration="3000" />
+      <workItem from="1720756692916" duration="509000" />
+      <workItem from="1720757211624" duration="20000" />
+      <workItem from="1720757269945" duration="7000" />
     </task>
     <servers />
   </component>

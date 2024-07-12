@@ -16,11 +16,11 @@ import java.util.concurrent.TimeUnit;
  */
 @Getter
 @Slf4j
-public class GRpcServer {
+public class GRpcServerLauncher {
 	private final Server server;
 	private final int port;
 
-	public GRpcServer(int port, BindableService bindableService) {
+	public GRpcServerLauncher(int port, BindableService bindableService) {
 		// Initialize the server instance with the given port and service definition
 		this.port = port;
 		this.server = ServerBuilder.forPort(this.port).addService(bindableService).build();
@@ -28,6 +28,7 @@ public class GRpcServer {
 
 	/**
 	 * A method to start the server.
+	 *
 	 * @return The server instance that has been started
 	 */
 	public Server start() throws IOException {
@@ -36,8 +37,10 @@ public class GRpcServer {
 
 	/**
 	 * Awaits the termination of the server within the specified time limit.
+	 *
 	 * @param time the time limit for the server to terminate
 	 * @param unit the time unit for the time limit
+	 *
 	 * @throws InterruptedException if the current thread is interrupted while waiting
 	 */
 	public void awaitTermination(int time, TimeUnit unit) throws InterruptedException {
@@ -46,6 +49,7 @@ public class GRpcServer {
 
 	/**
 	 * Awaits the termination of the server.
+	 *
 	 * @throws InterruptedException if the current thread is interrupted while waiting
 	 */
 	public void blockUntilShutdown() throws InterruptedException {
@@ -139,10 +143,11 @@ public class GRpcServer {
 
 	/**
 	 * Entry point of the application.
+	 *
 	 * @param args The command line arguments.
 	 */
 	public static void main(String[] args) throws InterruptedException, IOException {
-		GRpcServer server = new GRpcServer(50051, new GreeterServiceImpl());
+		GRpcServerLauncher server = new GRpcServerLauncher(50051, new GreeterServiceImpl());
 		server.start();
 		server.awaitTermination(100, TimeUnit.SECONDS);
 	}
